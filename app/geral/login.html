@@ -1,0 +1,19 @@
+<div style="width: 300px; margin: 0 auto;" >
+	
+	<center><h1>Login</h1></center>
+
+	<form name="FormLogin">
+		<div class="form-group">
+			<label for="login">Login</label>
+			<input class="form-control" type="text" id="login" ng-model="usuario.login" ng-required="true">
+		</div>
+		<div class="form-group">
+			<label for="senha">Senha</label>
+			<input class="form-control" type="password" id="senha" ng-model="usuario.senha" ng-required="true">
+		</div>
+		<button ng-click="login(usuario)" class="btn btn-primary btn-block" ng-disabled="FormLogin.$invalid">Entrar</button>
+		<br>
+		<a href="/#!/cadastre_se/" class="btn btn-success">Cadastre-se</a>
+	</form>
+
+</div>

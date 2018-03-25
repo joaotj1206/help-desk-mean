@@ -1,0 +1,20 @@
+<h1>Usuários</h1>
+
+<a href="/#!/usuarios/cadastrar" ng-show="isAdministrador()" class="btn btn-success">Cadastrar</a>
+<a href="/#!/home" class="btn btn-light">Home</a>
+<table class="table">
+	<tr>
+		<th>Nome</th>
+		<th>Login</th>
+		<th>Perfil</th>
+		<th colspan="2">Ação</th>
+	</tr>
+	<tr ng-repeat="usuario in usuarios">
+		<td ng-bind="usuario.nome"></td>
+		<td ng-bind="usuario.login"></td>
+		<td ng-bind="usuario.perfil"></td>
+		<td> <a href="/#!/usuarios/editar/{{usuario._id}}" class="btn btn-warning">Editar</a></td>
+		<td><button ng-show="isAdministrador()" ng-click="removerUsuario(usuario)" class="btn btn-danger">Apagar</button></td>
+	</tr>
+	
+</table>

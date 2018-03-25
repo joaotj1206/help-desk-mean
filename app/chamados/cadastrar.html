@@ -1,0 +1,14 @@
+<h1>Cadastrar Chamado</h1>
+
+<form name="FormCadastrarChamado">
+	<div class="form-group">
+		<label for="titulo">Título</label>
+		<input class="form-control" type="text" id="titulo" ng-model="chamado.titulo" ng-required="true">
+	</div>
+	<div class="form-group">
+		<label for="descricao">Descrição</label>
+		<input class="form-control" type="text" id="descricao" ng-model="chamado.descricao" ng-required="true">
+	</div>
+	<a href="/#!/chamados/listar" class="btn">Cancelar</a>
+	<button ng-click="cadastrarChamados(chamado)" class="btn btn-primary" ng-disabled="FormCadastrarChamado.$invalid">Salvar</button>
+</form>

@@ -1,0 +1,29 @@
+<h1>Chamados</h1>
+
+<a href="/#!/chamados/cadastrar" class="btn btn-success">Cadastrar</a>
+<a href="/#!/home" class="btn btn-light">Home</a>
+
+<table class="table">
+	<tr>
+		<th>Título</th>
+		<th>Descricao</th>
+		<th>Usuário Responsável</th>
+		<th>Status</th>
+		<th>Solução</th>
+		<th colspan="4">Ação</th>
+	</tr>
+	<tr ng-repeat="chamado in chamados">
+		<td ng-bind="chamado.titulo"></td>
+		<td ng-bind="chamado.descricao"></td>
+		<td ng-bind="chamado.usuarioResponsavel"></td>
+		<td ng-bind="chamado.status"></td>
+		<td ng-bind="chamado.solucao"></td>
+		
+		<td> <a href="/#!/chamados/atribuir/{{chamado._id}}" ng-show="permiteAtribuir(chamado.status)" class="btn btn-warning">Atribuir</a></td>
+		<td> <a href="/#!/chamados/finalizar/{{chamado._id}}" ng-show="permiteFinalizar(chamado.status)" class="btn btn-warning">Finalizar</a></td>
+		<td> <a href="/#!/chamados/editar/{{chamado._id}}" ng-show="permiteEditarCancelar(chamado)" class="btn btn-warning">Editar</a></td>
+		<td><button ng-click="cancelarChamado(chamado)" ng-show="permiteEditarCancelar(chamado)" class="btn btn-danger">Cancelar</button></td>
+		<td><button ng-click="removerChamado(chamado)" ng-show="permiteApagar(chamado.status)" class="btn btn-danger">Apagar</button></td>
+	</tr>
+	
+</table>
